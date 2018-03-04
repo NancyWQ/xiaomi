@@ -1,0 +1,38 @@
+以下均建立在安装了node和npm的基础上
+1.安装Vue-cli
+	npm install vue-cli -g
+2.测试vue-V命令是否有效（第二个V大写）
+3.vue init 模板名称 项目名称
+	通常情况下为vue init webpack（全面的webpack模块）
+4.选项自己填写 （Use ESLint to lint your code 按照严格模式开发 除大型项目以外都选n）
+5.npm install （可能会被略过）
+6.npm run dev 运行
+7.安装Vue全家桶
+	npm install vue-router vue-resource vuex --save
+8.引入 在main.js中 原有不变
+	import VueResource from 'vue-resource'
+	import VueRouter from 'vue-router'
+	import Vuex from 'vuex'
+
+	Vue.use(VueResource)
+	Vue.use(VueRouter)
+	Vue.use(Vuex)
+9.配置sass
+	在 "devDependencies": {} 中添加下面几个依赖
+
+	"node-sass": "^3.8.0",
+	"sass": "^0.5.0",
+	"sass-loader": "^4.0.0",
+	npm install 后，就可以正式使用 sass 啦
+将css以style的方式存储，以下面方式引入
+	<style lang="sass">
+	@import "/style/base.scss";
+	</style>
+10.rem适配
+<script>
+  let html = document.documentElement;
+
+  window.rem = html.getBoundingClientRect().width / 25 ;
+  html.style.fontSize = window.rem + 'px';
+</script>
+1rem=15px
