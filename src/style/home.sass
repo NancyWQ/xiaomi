@@ -1,0 +1,64 @@
+@import './base.sass'
+.public-header
+  background-color: #F2F2F2
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2)
+  z-index: 100
+  position: relative
+  .search-box
+    padding: getIphonese(16px) 0
+    padding-bottom: getIphonese(16px)
+    .logo
+      display:inline-block
+      width: getIphonese(43px)
+      padding: 0 getIphonese(23px)
+      line-height: getIphonese(54px)
+      color: #ff6b00
+      font-size: 0.7rem
+    .input-controller
+      position: absolute
+      left: getIphonese(89px)
+      right: getIphonese(89px)
+      height: getIphonese(58px)
+      top: getIphonese(15px)
+      @include box-sizing
+      @include f14px
+      width: 70%
+      line-height: getIphonese(54px)
+      border: 1px solid #e5e5e5
+      border-radius: 4px
+      padding-left: getIphonese(54px)
+      line-height: getIphonese(54px)
+      .input-controller::placeholder
+        color: rgba(0, 0, 0, 0.3)
+    .icon-xiaolian
+      display:inline-block
+      width: getIphonese(43px)
+      padding: 0 getIphonese(23px)
+      line-height: getIphonese(54px)
+      font-size: 0.7rem
+      position: absolute
+      right: 0
+.menu-box
+    .wrap-box
+      width: auto
+      white-space: nowrap
+      .item
+        padding: 0 getIphonese(19px)
+        padding-bottom: 1px
+        color: #7c7c7c
+        display: inline-block
+        span
+          display: inline-block
+          line-height: getIphonese(70px)
+          position: relative
+      .item.active
+        color: #ed5b00
+      .item.active span:after
+        content: ''
+        display: inline-block
+        position: absolute
+        bottom: 0px
+        left: 0px
+        width: 100%
+        height: 2px
+        background-color: #ed5b00
