@@ -3,7 +3,33 @@
       <!--1.3引入-->
       <!--2.1.2在父组件中给子组件绑定事件-->
       <HeaderComponent @title="thisTitle"></HeaderComponent>
-      <p>这是中间</p>
+      <div class="scroll-box tab-box mi-tj footer-hack">
+        这是推荐
+      </div>
+      <div class="scroll-box tab-box mi-tj footer-hack">
+        这是手机
+      </div>
+      <div class="scroll-box tab-box mi-tj footer-hack">
+        这是智能
+      </div>
+      <div class="scroll-box tab-box mi-tj footer-hack">
+        这是电视
+      </div>
+      <div class="scroll-box tab-box mi-tj footer-hack">
+        这是电脑
+      </div>
+      <div class="scroll-box tab-box mi-tj footer-hack">
+        这是推荐
+      </div>
+      <div class="scroll-box tab-box mi-tj footer-hack">
+        这是全面屏
+      </div>
+      <div class="scroll-box tab-box mi-tj footer-hack">
+        这是生活周边
+      </div>
+      <div class="scroll-box tab-box mi-tj footer-hack">
+        这是艺术
+      </div>
       <FooterComponent></FooterComponent>
   </div>
 </template>
@@ -27,6 +53,7 @@ components: {
     // 2.1.3定义函数，并进行处理
     thisTitle:function(msg){
       this.title=msg;
+      console.log("这是从子元素传过来的"+msg);
     }
   }
 }
