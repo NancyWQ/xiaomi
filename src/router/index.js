@@ -1,11 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 import HelloWorld from '@/components/HelloWorld'
 // 测试
 import HeaderComponent from '@/components/common/header'
 import FooterComponent from '@/components/common/footer'
 import HomeComponent from '@/components/home/index'
+import CarouselComponent from '@/components/common/slide'
 Vue.use(Router)
+Vue.use(VueAwesomeSwiper)
 
 export default new Router({
   routes: [
@@ -18,6 +21,11 @@ export default new Router({
       path: '/footer',
       name: 'FooterComponent',
       component: FooterComponent
+    },
+     {
+      path: '/slide',
+      name: 'CarouselComponent',
+      component: CarouselComponent
     },
      {
       path: '/',
