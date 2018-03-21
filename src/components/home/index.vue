@@ -6,8 +6,21 @@
       <!--用v-if判断显示哪一个 不用动态的样式类 ，因为每一个都不一样-->
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==0">
         <CarouselComponent></CarouselComponent>
-        这是推荐
+        <div class="nav-mi-tj clear" style="width:100%">
+          <a href="javascript:;" class="fl"  style="width:25%;height:100px;">
+            <img  src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011022292984819.png" alt="" style="width:100%;height:100%;">
+          </a>
+          <a href="javascript:;" class="fl" style="width:25%;height:100px;">
+            <img  src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011022292372054.png" alt="" style="width:100%;height:100%;" >
+          </a>
+          <a href="javascript:;" class="fl" style="width:25%;height:100px;">
+            <img  src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011022291629252.png" alt="" style="width:100%;height:100%;">
+          </a>
+          <a href="javascript:;" class="fl" style="width:25%;height:100px;">
+            <img  src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011022290460400.png" alt="" style="width:100%;height:100%;">
+          </a>
       </div>
+    </div>
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==1">
         <CarouselComponent></CarouselComponent>
         这是手机
