@@ -4,6 +4,7 @@
       <!--2.1.2在父组件中给子组件绑定事件-->
       <HeaderComponent @title="thisTitle"></HeaderComponent>
       <!--用v-if判断显示哪一个 不用动态的样式类 ，因为每一个都不一样-->
+      <!--这是推荐-->
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==0">
         <CarouselComponent></CarouselComponent>
         <div class="nav-mi-tj clear" style="width:100%">
@@ -49,12 +50,39 @@
         </div>
       </div>
     </div>
+    <!--这是手机-->
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==1">
         <CarouselComponent></CarouselComponent>
-        这是手机
+        <div class="shop-item">
+        <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px;">
+        <div class="shop-box clear">
+          <div class="shop-box-item" v-for="target in shoplist01">
+            <img :src="target.src" alt="">
+            <p class="title">{{ target.title }}</p>
+            <p class="con">{{ target.con }}</p>
+            <p class="money">
+              <span class="small">￥</span> {{ target.money }}
+            </p>
+          </div>
+        </div>
       </div>
+      </div>
+      <!--这是智能-->
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==2">
-        这是智能
+       <CarouselComponent></CarouselComponent>
+       <div class="shop-item">
+        <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px">
+        <div class="shop-box clear">
+          <div class="shop-box-item" v-for="target in shoplist02">
+            <img :src="target.src" alt="">
+            <p class="title">{{ target.title }}</p>
+            <p class="con">{{ target.con }}</p>
+            <p class="money">
+              <span class="small">￥</span> {{ target.money }}
+            </p>
+          </div>
+        </div>
+      </div> 
       </div>
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==3">
         这是电视
@@ -158,6 +186,108 @@ data:function(){
             con: '举步之明，光明立现',
             money: 49,
             href: '/detail/1008'
+          }
+        ],
+        shoplist01: [
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+            title: '红米Note 4X 32GB',
+            con: '多彩金属 / 超长续航',
+            money: 899,
+            href: '/detail/1010'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+            title: '红米Note 4X 32GB',
+            con: '多彩金属 / 超长续航',
+            money: 899,
+            href: '/detail/1010'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+            title: '红米Note 4X 32GB',
+            con: '多彩金属 / 超长续航',
+            money: 899,
+            href: '/detail/1010'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+            title: '红米Note 4X 32GB',
+            con: '多彩金属 / 超长续航',
+            money: 899,
+            href: '/detail/1010'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+            title: '红米Note 4X 32GB',
+            con: '多彩金属 / 超长续航',
+            money: 899,
+            href: '/detail/1010'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+            title: '红米Note 4X 32GB',
+            con: '多彩金属 / 超长续航',
+            money: 899,
+            href: '/detail/1010'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+            title: '红米Note 4X 32GB',
+            con: '多彩金属 / 超长续航',
+            money: 899,
+            href: '/detail/1010'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+            title: '红米Note 4X 32GB',
+            con: '多彩金属 / 超长续航',
+            money: 899,
+            href: '/detail/1010'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+            title: '红米Note 4X 32GB',
+            con: '多彩金属 / 超长续航',
+            money: 899,
+            href: '/detail/1010'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+            title: '红米Note 4X 32GB',
+            con: '多彩金属 / 超长续航',
+            money: 899,
+            href: '/detail/1010'
+          }
+        ],
+        shoplist02: [
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/93cc1fa15e0e9af87e37cba047d8186e.jpg',
+            title: '米家四位四控插线板',
+            con: '四位分控，随用随开',
+            money: 89,
+            href: '/detail/1012'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/93cc1fa15e0e9af87e37cba047d8186e.jpg',
+            title: '米家四位四控插线板',
+            con: '四位分控，随用随开',
+            money: 89,
+            href: '/detail/1012'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/93cc1fa15e0e9af87e37cba047d8186e.jpg',
+            title: '米家四位四控插线板',
+            con: '四位分控，随用随开',
+            money: 89,
+            href: '/detail/1012'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/93cc1fa15e0e9af87e37cba047d8186e.jpg',
+            title: '米家四位四控插线板',
+            con: '四位分控，随用随开',
+            money: 89,
+            href: '/detail/1012'
           }
         ],
     } 
