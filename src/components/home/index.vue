@@ -84,14 +84,48 @@
         </div>
       </div> 
       </div>
+      <!--这是电视-->
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==3">
-        这是电视
+          <CarouselComponent></CarouselComponent>
+          <div class="shop-item">
+        <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px">
+        <div class="shop-box clear">
+          <div class="shop-box-item" v-for="target in shoplist03">
+            <img :src="target.src" alt="">
+            <p class="title">{{ target.title }}</p>
+            <p class="con">{{ target.con }}</p>
+            <p class="money">
+              <span class="small">￥</span> {{ target.money }}
+            </p>
+          </div>
+        </div>
+      </div>
       </div>
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==4">
-        这是电脑
+        <CarouselComponent></CarouselComponent>
+        <div class="shop-item">
+        <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px">
+        <div class="shop-box clear">
+          <div class="shop-box-item" v-for="target in shoplist04">
+            <img :src="target.src" alt="">
+            <p class="title">{{ target.title }}</p>
+            <p class="con">{{ target.con }}</p>
+            <p class="money">
+              <span class="small">￥</span> {{ target.money }}
+            </p>
+          </div>
+        </div>
       </div>
+      </div>
+      <!--全面屏-->
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==5">
-        这是全面屏
+        <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317010732422.png' alt="">
+        <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/48ca6cfb19c45e7cbecbd8c34c757445.jpg' alt="">
+        <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317012799998.png' alt="">
+        <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317013522274.png' alt="">
+        <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317005752430.png' alt="">
+        <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317011947232.png' alt="">
+        <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317014434073.png' alt="">
       </div>
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==6">
         这是生活周边
@@ -288,6 +322,94 @@ data:function(){
             con: '四位分控，随用随开',
             money: 89,
             href: '/detail/1012'
+          }
+        ],
+        shoplist03: [
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
+            title: '小米电视4A 43英寸',
+            con: '全高清 HDR，64位处理器',
+            money: 1999,
+            href: '/detail/1004'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
+            title: '小米电视4A 43英寸',
+            con: '全高清 HDR，64位处理器',
+            money: 1999,
+            href: '/detail/1004'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
+            title: '小米电视4A 43英寸',
+            con: '全高清 HDR，64位处理器',
+            money: 1999,
+            href: '/detail/1004'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
+            title: '小米电视4A 43英寸',
+            con: '全高清 HDR，64位处理器',
+            money: 1999,
+            href: '/detail/1004'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
+            title: '小米电视4A 43英寸',
+            con: '全高清 HDR，64位处理器',
+            money: 1999,
+            href: '/detail/1004'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
+            title: '小米电视4A 43英寸',
+            con: '全高清 HDR，64位处理器',
+            money: 1999,
+            href: '/detail/1004'
+          }
+        ],
+        shoplist04: [
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
+            title: '13.3"笔记本i5 独显',
+            con: '指纹解锁，全金属机身',
+            money: 5199,
+            href: '/detail/1014'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
+            title: '13.3"笔记本i5 独显',
+            con: '指纹解锁，全金属机身',
+            money: 5199,
+            href: '/detail/1014'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
+            title: '13.3"笔记本i5 独显',
+            con: '指纹解锁，全金属机身',
+            money: 5199,
+            href: '/detail/1014'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
+            title: '13.3"笔记本i5 独显',
+            con: '指纹解锁，全金属机身',
+            money: 5199,
+            href: '/detail/1014'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
+            title: '13.3"笔记本i5 独显',
+            con: '指纹解锁，全金属机身',
+            money: 5199,
+            href: '/detail/1014'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
+            title: '13.3"笔记本i5 独显',
+            con: '指纹解锁，全金属机身',
+            money: 5199,
+            href: '/detail/1014'
           }
         ],
     } 
