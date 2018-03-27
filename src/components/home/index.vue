@@ -128,13 +128,42 @@
         <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317014434073.png' alt="">
       </div>
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==6">
-        这是生活周边
+        <CarouselComponent></CarouselComponent>
+         <div class="shop-item">
+        <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px">
+        <div class="shop-box clear">
+          <div class="shop-box-item" v-for="target in shoplist06">
+            <img :src="target.src" alt="">
+            <p class="title">{{ target.title }}</p>
+            <p class="con">{{ target.con }}</p>
+            <p class="money">
+              <span class="small">￥</span> {{ target.money }}
+            </p>
+          </div>
+        </div>
+      </div>
       </div>
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==7">
-        这是盒子
+         <CarouselComponent></CarouselComponent>
+         <div class="shop-item">
+        <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px;">
+        <div class="shop-box clear">
+          <div class="shop-box-item" v-for="target in shoplist07">
+            <img :src="target.src" alt="">
+            <p class="title">{{ target.title }}</p>
+            <p class="con">{{ target.con }}</p>
+            <p class="money">
+              <span class="small">￥</span> {{ target.money }}
+            </p>
+          </div>
+        </div>
+      </div>
       </div>
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==8">
-        这是艺术
+        <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317154829739.png' alt="">
+      <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317155627636.png' alt="">
+      <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317160444789.png' alt="">
+      <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317161351928.png' alt="">
       </div>
       <FooterComponent></FooterComponent>
   </div>
@@ -412,6 +441,80 @@ data:function(){
             href: '/detail/1014'
           }
         ],
+        shoplist06: [
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
+            title: '8H护颈乳胶枕 Z2',
+            con: '多重新科技  升级好睡眠',
+            money: 239,
+            href: '/detail/1016'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
+            title: '8H护颈乳胶枕 Z2',
+            con: '多重新科技  升级好睡眠',
+            money: 239,
+            href: '/detail/1016'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
+            title: '8H护颈乳胶枕 Z2',
+            con: '多重新科技  升级好睡眠',
+            money: 239,
+            href: '/detail/1016'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
+            title: '8H护颈乳胶枕 Z2',
+            con: '多重新科技  升级好睡眠',
+            money: 239,
+            href: '/detail/1016'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
+            title: '8H护颈乳胶枕 Z2',
+            con: '多重新科技  升级好睡眠',
+            money: 239,
+            href: '/detail/1016'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
+            title: '8H护颈乳胶枕 Z2',
+            con: '多重新科技  升级好睡眠',
+            money: 239,
+            href: '/detail/1015'
+          }
+        ],
+        shoplist07: [
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317120865819.png',
+            title: '小米影视会员卡',
+            con: '畅享海量片库',
+            money: 498,
+            href: '/detail/1018'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317120865819.png',
+            title: '小米影视会员卡',
+            con: '畅享海量片库',
+            money: 498,
+            href: '/detail/1018'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317120865819.png',
+            title: '小米影视会员卡',
+            con: '畅享海量片库',
+            money: 498,
+            href: '/detail/1018'
+          },
+          {
+            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317120865819.png',
+            title: '小米影视会员卡',
+            con: '畅享海量片库',
+            money: 498,
+            href: '/detail/1018'
+          }
+        ]
     } 
 },
 //1.2声明
