@@ -5,8 +5,9 @@ import HelloWorld from '@/components/HelloWorld'
 // 测试
 import HeaderComponent from '@/components/common/header'
 import FooterComponent from '@/components/common/footer'
-import HomeComponent from '@/components/home/index'
 import CarouselComponent from '@/components/common/slide'
+import HomeComponent from '@/components/home/index'
+import UserIndexComponent from '@/components/user/index'
 Vue.use(Router)
 Vue.use(VueAwesomeSwiper)
 
@@ -31,6 +32,11 @@ export default new Router({
       path: '/',
       name: 'HomeComponent',
       component: HomeComponent
+    },
+    {
+      path: '/user',
+      name: 'UserIndexComponent',
+      component: UserIndexComponent
     }
   ]
 })

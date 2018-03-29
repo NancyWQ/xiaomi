@@ -1,10 +1,13 @@
 <template>
    <footer class="footer clear">
-      <div class="footer-item" >
+      <div class="footer-item">
+        <!--页面跳转方式1router-link-->
+        <router-link to="/">
         <p class="icon">
           <span class="iconfont icon-shouye"></span>
         </p>
         <p class="name">首页</p>
+        </router-link>
       </div>
 
       <div class="footer-item" >
@@ -23,10 +26,12 @@
       </div>
 
       <div class="footer-item">
+        <router-link to="/user">
         <p class="icon">
           <span class="iconfont icon-xiaolian"></span>
         </p>
         <p class="name">我的</p>
+        </router-link>
       </div>
     </footer>
 </template>
