@@ -10,23 +10,49 @@
       我的订单
     </div>
     <div class="tab-box clear">
-      <div class="item" @click="$router.openPage('/pay')">
+      <div class="item">
         <p class="icon">
-          <span class="iconfont icon-daifukuan"></span>
+          <span class="iconfont icon-daifukuan" style="font-size:35px;"></span>
         </p>
         <p class="name">待付款</p>
       </div>
-      <div class="item" @click="$router.openPage('/pay')">
+      <div class="item">
         <p class="icon">
-          <span class="iconfont icon-daishouhuo"></span>
+          <span class="iconfont icon-daishouhuo" style="font-size:35px;"></span>
         </p>
         <p class="name">待收货</p>
       </div>
-      <div class="item" @click="$router.openPage('/pay')">
+      <div class="item">
         <p class="icon">
-          <span class="iconfont icon-tuihuanhuo"></span>
+          <span class="iconfont icon-tuihuanhuo" style="font-size:35px;"></span>
         </p>
         <p class="name">退换修</p>
+      </div>
+    </div>
+      <div class="new-wrap">
+      <div class="dingdan public-padding p-item" @click="$router.openPage('/pay')">
+        <span class="iconfont icon-huiyuan" style="color: #FDBF2D;"></span>
+        <span>会员福利</span>
+      </div>
+      <div class="dingdan public-padding p-item" @click="$router.openPage('/pay')">
+        <span class="iconfont icon-daifukuan" style="color: #51BBE0;"></span>
+        <span>我的优惠</span>
+      </div>
+    </div>
+    <div class="new-wrap">
+      <div class="dingdan public-padding p-item" @click="$router.openPage('/pay')">
+        <span class="iconfont icon-fuwuerji" style="color: #F96C5E;"></span>
+        <span>服务中心</span>
+      </div>
+      <div class="dingdan public-padding p-item" @click="$router.openPage('/pay')">
+        <span class="iconfont icon-store" style="color: #FF8B43;"></span>
+        <span>小米之家</span>
+      </div>
+    </div>
+    <div class="new-wrap">
+      <div class="dingdan public-padding p-item" @click="$router.openPage('/pay')">
+        <span class="iconfont icon-shezhi" style="color: #818C99;"></span>
+        <span>设置</span>
       </div>
     </div>
   </div>
@@ -107,11 +133,11 @@ export default {
 
       .iconfont
         font-size: 0.65rem
-        width: 0.8rem
+        width: 2rem
         display: inline-block
         text-align: center
         position: absolute
-        left: 0.5rem
+        left: -0.1rem
 
     .tab-box
       background-color: #fff
