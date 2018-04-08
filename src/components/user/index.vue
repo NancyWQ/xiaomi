@@ -1,5 +1,6 @@
 <template>
-  <div class="app-init scroll-box mine-page footer-hack">
+<div  class="app-init home-index">
+  <div class=" scroll-box mine-page footer-hack">
       <div class="user-box public-padding">
       <div class="face-book">
         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/normal-face.png" alt="">
@@ -30,36 +31,42 @@
       </div>
     </div>
       <div class="new-wrap">
-      <div class="dingdan public-padding p-item" @click="$router.openPage('/pay')">
+      <div class="dingdan public-padding p-item">
         <span class="iconfont icon-huiyuan" style="color: #FDBF2D;"></span>
         <span>会员福利</span>
       </div>
-      <div class="dingdan public-padding p-item" @click="$router.openPage('/pay')">
+      <div class="dingdan public-padding p-item">
         <span class="iconfont icon-daifukuan" style="color: #51BBE0;"></span>
         <span>我的优惠</span>
       </div>
     </div>
     <div class="new-wrap">
-      <div class="dingdan public-padding p-item" @click="$router.openPage('/pay')">
+      <div class="dingdan public-padding p-item">
         <span class="iconfont icon-fuwuerji" style="color: #F96C5E;"></span>
         <span>服务中心</span>
       </div>
-      <div class="dingdan public-padding p-item" @click="$router.openPage('/pay')">
+      <div class="dingdan public-padding p-item">
         <span class="iconfont icon-store" style="color: #FF8B43;"></span>
         <span>小米之家</span>
       </div>
     </div>
     <div class="new-wrap">
-      <div class="dingdan public-padding p-item" @click="$router.openPage('/pay')">
+      <div class="dingdan public-padding p-item">
         <span class="iconfont icon-shezhi" style="color: #818C99;"></span>
         <span>设置</span>
       </div>
     </div>
   </div>
+  <FooterComponent></FooterComponent>
+  </div>
 </template>
 <script>
+import FooterComponent from '../common/footer'
 export default {
   name:"UserIndexComponent",
+  components:{
+  FooterComponent
+},
 }
 </script>
 <style lang="sass">
@@ -106,7 +113,7 @@ export default {
       border-bottom: 1px solid #D9D9D9
     .p-item:after
       font-family: 'iconfont'
-      content: "\e628"
+      content: ">"
       position: absolute
       right: getIphonese(26px)
       color: #777777

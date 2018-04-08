@@ -8,6 +8,7 @@ import FooterComponent from '@/components/common/footer'
 import CarouselComponent from '@/components/common/slide'
 import HomeComponent from '@/components/home/index'
 import UserIndexComponent from '@/components/user/index'
+import divideComponent from '@/components/divide/index'
 Vue.use(Router)
 Vue.use(VueAwesomeSwiper)
 
@@ -37,6 +38,11 @@ export default new Router({
       path: '/user',
       name: 'UserIndexComponent',
       component: UserIndexComponent
+    },
+    {
+       path: '/divide',
+      name: 'divideComponent',
+      component: divideComponent
     }
   ]
 })

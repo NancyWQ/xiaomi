@@ -11,10 +11,12 @@
       </div>
 
       <div class="footer-item" >
+        <router-link to='/divide'>
         <p class="icon">
           <span class="iconfont icon-fenlei"></span>
         </p>
         <p class="name">分类</p>
+        </router-link>
       </div>
 
       <div class="footer-item shop-car">
@@ -37,7 +39,7 @@
 </template>
 <script>
 export default {
-  name:"FooterComponent"
+  name:"footerComponent"
 }
 </script>
 <style lang="sass">
