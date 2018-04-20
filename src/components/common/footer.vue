@@ -44,6 +44,8 @@ export default {
 </script>
 <style lang="sass">
 @import "../../style/base.sass";
+.name
+  color:#9999B3
 </style>
 
 
