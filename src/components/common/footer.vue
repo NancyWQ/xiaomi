@@ -20,11 +20,12 @@
       </div>
 
       <div class="footer-item shop-car">
+        <router-link to='/cart'>
         <p class="icon">
           <span class="iconfont icon-gouwuche"></span>
         </p>
         <p class="name">购物车</p>
-        <!--<span class="num" v-show="getShopCarLength > 0" :class="{ 'full': parseInt(getShopCarLength) >= 99 }" >{{ getShopCarLength >= 99 ? '99+' : getShopCarLength }}</span>-->
+        </router-link>
       </div>
 
       <div class="footer-item">

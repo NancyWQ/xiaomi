@@ -9,6 +9,21 @@
           <li class="item" v-for="(target, index) in dataItem" :class="{ 'active': index == active }">{{target.name}}</li>
         </ul>
       </div>
+       <div class="right-box absolute scroll-box" ref="rightView">
+          <ul>
+            <li class="item" v-for="(target, index) in dataItem">
+              <p class="title">
+                <span>{{target.name}}</span>
+              </p>
+              <div class="shop-item-wrap clear">
+                <div class="shop-item" v-for="(shop,index) in target.children">
+                  <p><img :src="shop.src" alt="index"></p>
+                  <p class="name">{{shop.name}}</p>
+                </div>
+              </div>
+            </li>
+        </ul>
+       </div>
     </div>
     <FooterComponent></FooterComponent>
   </div>

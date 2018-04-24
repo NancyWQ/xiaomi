@@ -9,6 +9,7 @@ import CarouselComponent from '@/components/common/slide'
 import HomeComponent from '@/components/home/index'
 import UserIndexComponent from '@/components/user/index'
 import divideComponent from '@/components/divide/index'
+import cartComponent from '@/components/cart/index'
 Vue.use(Router)
 Vue.use(VueAwesomeSwiper)
 
@@ -43,6 +44,11 @@ export default new Router({
        path: '/divide',
       name: 'divideComponent',
       component: divideComponent
+    },
+    {
+      path:"/cart",
+      name:'cartComponent',
+      component:cartComponent
     }
   ]
 })
