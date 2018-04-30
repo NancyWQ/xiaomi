@@ -606,6 +606,7 @@ export default {
           img
             width: getIphonese(80px)
             padding-bottom: 0.1rem
+            height: 75px;
 </style>
 
 

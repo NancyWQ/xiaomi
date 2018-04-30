@@ -52,8 +52,8 @@
       <div class="item continue" >继续购物</div>
       <div class="item pay">去结算</div>
     </div>
+        <FooterComponent></FooterComponent>
   </div>
-</div>
 </template>
 <script>
 import HeaderBackComponent from '../common/header-back'

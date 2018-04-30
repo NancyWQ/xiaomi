@@ -40,7 +40,31 @@
 </template>
 <script>
 export default {
-  name:"footerComponent"
+  name:"footerComponent",
+  data(){
+    return {
+        navList:[{
+          router:"/",
+          icon:"icon-shouye",
+          title:"首页"
+        },{
+          router:"/",
+          icon:"icon-shouye",
+          title:"首页"
+        },{
+          router:"/",
+          icon:"icon-shouye",
+          title:"首页"
+        },{
+          router:"/",
+          icon:"icon-shouye",
+          title:"首页"
+        }]
+    }
+  },
+  methods:{
+
+  }
 }
 </script>
 <style lang="sass">
