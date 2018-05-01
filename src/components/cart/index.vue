@@ -67,6 +67,7 @@ export default {
  data(){
    return{
      shopCarListLength:0,
+     getAllMoney:0,
      shoplist : [
           {
             src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
