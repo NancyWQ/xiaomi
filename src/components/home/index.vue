@@ -6,7 +6,7 @@
       <!--用v-if判断显示哪一个 不用动态的样式类 ，因为每一个都不一样-->
       <!--这是推荐-->
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==0">
-        <CarouselComponent></CarouselComponent>
+        <CarouselComponent :showCar="carImgs"></CarouselComponent>
         <div class="nav-mi-tj clear" style="width:100%">
           <a href="javascript:;" class="fl"  style="width:25%;height:100px;">
             <img  src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011022292984819.png" alt="" style="width:100%;height:100%;">
@@ -52,7 +52,7 @@
     </div>
     <!--这是手机-->
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==1">
-        <CarouselComponent></CarouselComponent>
+        <CarouselComponent :showCar="carImgs"></CarouselComponent>
         <div class="shop-item">
         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px;">
         <div class="shop-box clear">
@@ -69,7 +69,7 @@
       </div>
       <!--这是智能-->
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==2">
-       <CarouselComponent></CarouselComponent>
+       <CarouselComponent  :showCar="carImgs"></CarouselComponent>
        <div class="shop-item">
         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px">
         <div class="shop-box clear">
@@ -86,7 +86,7 @@
       </div>
       <!--这是电视-->
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==3">
-          <CarouselComponent></CarouselComponent>
+          <CarouselComponent :showCar="carImgs"></CarouselComponent>
           <div class="shop-item">
         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px">
         <div class="shop-box clear">
@@ -102,7 +102,7 @@
       </div>
       </div>
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==4">
-        <CarouselComponent></CarouselComponent>
+        <CarouselComponent :showCar="carImgs"></CarouselComponent>
         <div class="shop-item">
         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px">
         <div class="shop-box clear">
@@ -128,7 +128,7 @@
         <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317014434073.png' alt="">
       </div>
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==6">
-        <CarouselComponent></CarouselComponent>
+        <CarouselComponent :showCar="carImgs"></CarouselComponent>
          <div class="shop-item">
         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px">
         <div class="shop-box clear">
@@ -144,7 +144,7 @@
       </div>
       </div>
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==7">
-         <CarouselComponent></CarouselComponent>
+         <CarouselComponent :showCar="carImgs"></CarouselComponent>
          <div class="shop-item">
         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px;">
         <div class="shop-box clear">
@@ -179,6 +179,7 @@ name:"HomeComponent",
 data:function(){
   return {
     title:0,
+    carImgs:[],
     shoplist : [
           {
             src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/65eeeedca463345b0cfd36e042185af3.jpg',
@@ -525,7 +526,19 @@ components: {
     // 2.1.3定义函数，并进行处理
     thisTitle:function(msg){
       this.title=msg;
-      console.log("这是从子元素传过来的"+msg);
+       let _this=this;
+        // 发送http请求 方式一 vue-resouse
+        // this.$http({
+        //     url:`http://localhost:8081/carousel?pgid=${this.title+1}`,
+        //     method:"get",
+        // }).then((res)=>{
+        //     let imgs=[];
+        //     for(var item of res.data){
+        //         imgs.push(item.url);
+        //     }
+        //     console.log(imgs);
+        //     this.carImgs=imgs;
+        // })
     }
   }
 }

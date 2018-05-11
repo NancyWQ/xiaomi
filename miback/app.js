@@ -4,15 +4,26 @@
 const express=require('express');
 const http=require('http');
 const bodyParser=require('body-parser');
-//×¢Òâ×Ô¼º½¨µÄÄ£¿éµÄÒıÈë·½Ê½
+//æ³¨æ„è‡ªå·±å»ºçš„æ¨¡å—çš„å¼•å…¥æ–¹å¼
 const pool=require('./pool.js');
-//´´½¨·şÎñÆ÷
+//åˆ›å»ºæœåŠ¡å™¨
 var app=express();
 var server=http.createServer(app);
 server.listen(8081);
+//è·¨åŸŸ
+app.all('*',function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Content-Type,Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild');
+    res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE,OPTIONS');
+    if (req.method == 'OPTIONS') {
+        res.send(200);
+    } else {
+        next();
+    }
+});
 app.get("/carousel",(reg,res)=>{
-    //´ÓÇ°¶Ë»ñÈ¡µ½Í¼Æ¬×éµÄ±êºÅ
-    var pgId=1;
+    //ä»å‰ç«¯è·å–åˆ°å›¾ç‰‡ç»„çš„æ ‡å·
+    var pgId=reg.query.pgid;
     var sql="SELECT * FROM  `carousel` where pgid= ? ";
     pool.getConnection((err,conn)=>{
         if(err){

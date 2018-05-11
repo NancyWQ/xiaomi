@@ -15,6 +15,7 @@
 export default {
   name:"CarouselComponent",
 //   3.1.2在子组件用props接收
+    props:['showCar'],
    data:function(){
        return {
         mark: 0,
@@ -28,17 +29,24 @@ export default {
     },
     created() {
         this.play()
+        this.change(0);
     },
     methods: {
         change(i) {
-            this.mark = i
+             this.$http({
+            url:`http://localhost:8081/carousel?pgid=${this.mark+1}`,
+            method:"get",
+        }).then((res)=>{
+            let imgs=[];
+            for(var item of res.data){
+                imgs.push(item.url);
+            }
+            console.log(imgs);
+            this.img=imgs;
+        })
+        this.mark = i;
         },
         autoPlay() {
-            // this.mark++
-            //     if (this.mark>this.img.length-1) {
-            //         this.mark = 0
-            //         return
-            //     }
             this.timer=setInterval(()=>{
                  this.mark++
                 if (this.mark>this.img.length-1) {
