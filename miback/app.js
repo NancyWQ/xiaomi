@@ -39,4 +39,22 @@ app.get("/carousel",(reg,res)=>{
             })
         }
     })
-})
+});
+app.get('/indexList',(reg,res)=>{
+    var indexListId=reg.query.indexListId;
+    var sql="SELECT *  FROM  `index_pic` WHERE  `group` = ?";
+    pool.getConnection((err,conn)=>{
+        if(err){
+            throw new Error;
+        }else {
+            conn.query(sql,[indexListId],(err, result)=> {
+                if (err) {
+                    throw new Error;
+                }else {
+                    res.json(result);
+                }
+                conn.release();
+            })
+        }
+    })
+});

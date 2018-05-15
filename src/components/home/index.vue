@@ -6,7 +6,7 @@
       <!--用v-if判断显示哪一个 不用动态的样式类 ，因为每一个都不一样-->
       <!--这是推荐-->
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==0">
-        <CarouselComponent :showCar="carImgs"></CarouselComponent>
+        <CarouselComponent :showCar="title"></CarouselComponent>
         <div class="nav-mi-tj clear" style="width:100%">
           <a href="javascript:;" class="fl"  style="width:25%;height:100px;">
             <img  src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011022292984819.png" alt="" style="width:100%;height:100%;">
@@ -52,11 +52,11 @@
     </div>
     <!--这是手机-->
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==1">
-        <CarouselComponent :showCar="carImgs"></CarouselComponent>
+        <CarouselComponent :showCar="title"></CarouselComponent>
         <div class="shop-item">
         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px;">
         <div class="shop-box clear">
-          <div class="shop-box-item" v-for="target in shoplist01">
+          <div class="shop-box-item" v-for="target in shoplist">
             <img :src="target.src" alt="">
             <p class="title">{{ target.title }}</p>
             <p class="con">{{ target.con }}</p>
@@ -69,11 +69,11 @@
       </div>
       <!--这是智能-->
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==2">
-       <CarouselComponent  :showCar="carImgs"></CarouselComponent>
+       <CarouselComponent  :showCar="title"></CarouselComponent>
        <div class="shop-item">
         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px">
         <div class="shop-box clear">
-          <div class="shop-box-item" v-for="target in shoplist02">
+          <div class="shop-box-item" v-for="target in shoplist">
             <img :src="target.src" alt="">
             <p class="title">{{ target.title }}</p>
             <p class="con">{{ target.con }}</p>
@@ -86,11 +86,11 @@
       </div>
       <!--这是电视-->
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==3">
-          <CarouselComponent :showCar="carImgs"></CarouselComponent>
+          <CarouselComponent :showCar="title"></CarouselComponent>
           <div class="shop-item">
         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px">
         <div class="shop-box clear">
-          <div class="shop-box-item" v-for="target in shoplist03">
+          <div class="shop-box-item" v-for="target in shoplist">
             <img :src="target.src" alt="">
             <p class="title">{{ target.title }}</p>
             <p class="con">{{ target.con }}</p>
@@ -102,11 +102,11 @@
       </div>
       </div>
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==4">
-        <CarouselComponent :showCar="carImgs"></CarouselComponent>
+        <CarouselComponent :showCar="title"></CarouselComponent>
         <div class="shop-item">
         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px">
         <div class="shop-box clear">
-          <div class="shop-box-item" v-for="target in shoplist04">
+          <div class="shop-box-item" v-for="target in shoplist">
             <img :src="target.src" alt="">
             <p class="title">{{ target.title }}</p>
             <p class="con">{{ target.con }}</p>
@@ -128,11 +128,11 @@
         <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317014434073.png' alt="">
       </div>
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==6">
-        <CarouselComponent :showCar="carImgs"></CarouselComponent>
+        <CarouselComponent :showCar="title"></CarouselComponent>
          <div class="shop-item">
         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px">
         <div class="shop-box clear">
-          <div class="shop-box-item" v-for="target in shoplist06">
+          <div class="shop-box-item" v-for="target in shoplist">
             <img :src="target.src" alt="">
             <p class="title">{{ target.title }}</p>
             <p class="con">{{ target.con }}</p>
@@ -144,11 +144,11 @@
       </div>
       </div>
       <div class="scroll-box tab-box mi-tj footer-hack" v-if="title==7">
-         <CarouselComponent :showCar="carImgs"></CarouselComponent>
+         <CarouselComponent :showCar="title"></CarouselComponent>
          <div class="shop-item">
         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px;">
         <div class="shop-box clear">
-          <div class="shop-box-item" v-for="target in shoplist07">
+          <div class="shop-box-item" v-for="target in shoplist">
             <img :src="target.src" alt="">
             <p class="title">{{ target.title }}</p>
             <p class="con">{{ target.con }}</p>
@@ -179,366 +179,33 @@ name:"HomeComponent",
 data:function(){
   return {
     title:0,
-    carImgs:[],
-    shoplist : [
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/65eeeedca463345b0cfd36e042185af3.jpg',
-            title: '米家感应灯',
-            con: '举步之明，光明立现',
-            money: 49,
-            href: '/detail/1008'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/65eeeedca463345b0cfd36e042185af3.jpg',
-            title: '米家感应灯',
-            con: '举步之明，光明立现',
-            money: 49,
-            href: '/detail/1008'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/65eeeedca463345b0cfd36e042185af3.jpg',
-            title: '米家感应灯',
-            con: '举步之明，光明立现',
-            money: 49,
-            href: '/detail/1008'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/65eeeedca463345b0cfd36e042185af3.jpg',
-            title: '米家感应灯',
-            con: '举步之明，光明立现',
-            money: 49,
-            href: '/detail/1008'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/65eeeedca463345b0cfd36e042185af3.jpg',
-            title: '米家感应灯',
-            con: '举步之明，光明立现',
-            money: 49,
-            href: '/detail/1008'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/65eeeedca463345b0cfd36e042185af3.jpg',
-            title: '米家感应灯',
-            con: '举步之明，光明立现',
-            money: 49,
-            href: '/detail/1008'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/65eeeedca463345b0cfd36e042185af3.jpg',
-            title: '米家感应灯',
-            con: '举步之明，光明立现',
-            money: 49,
-            href: '/detail/1008'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/65eeeedca463345b0cfd36e042185af3.jpg',
-            title: '米家感应灯',
-            con: '举步之明，光明立现',
-            money: 49,
-            href: '/detail/1008'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/65eeeedca463345b0cfd36e042185af3.jpg',
-            title: '米家感应灯',
-            con: '举步之明，光明立现',
-            money: 49,
-            href: '/detail/1008'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/65eeeedca463345b0cfd36e042185af3.jpg',
-            title: '米家感应灯',
-            con: '举步之明，光明立现',
-            money: 49,
-            href: '/detail/1008'
-          }
-        ],
-        shoplist01: [
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
-            title: '红米Note 4X 32GB',
-            con: '多彩金属 / 超长续航',
-            money: 899,
-            href: '/detail/1010'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
-            title: '红米Note 4X 32GB',
-            con: '多彩金属 / 超长续航',
-            money: 899,
-            href: '/detail/1010'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
-            title: '红米Note 4X 32GB',
-            con: '多彩金属 / 超长续航',
-            money: 899,
-            href: '/detail/1010'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
-            title: '红米Note 4X 32GB',
-            con: '多彩金属 / 超长续航',
-            money: 899,
-            href: '/detail/1010'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
-            title: '红米Note 4X 32GB',
-            con: '多彩金属 / 超长续航',
-            money: 899,
-            href: '/detail/1010'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
-            title: '红米Note 4X 32GB',
-            con: '多彩金属 / 超长续航',
-            money: 899,
-            href: '/detail/1010'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
-            title: '红米Note 4X 32GB',
-            con: '多彩金属 / 超长续航',
-            money: 899,
-            href: '/detail/1010'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
-            title: '红米Note 4X 32GB',
-            con: '多彩金属 / 超长续航',
-            money: 899,
-            href: '/detail/1010'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
-            title: '红米Note 4X 32GB',
-            con: '多彩金属 / 超长续航',
-            money: 899,
-            href: '/detail/1010'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
-            title: '红米Note 4X 32GB',
-            con: '多彩金属 / 超长续航',
-            money: 899,
-            href: '/detail/1010'
-          }
-        ],
-        shoplist02: [
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/93cc1fa15e0e9af87e37cba047d8186e.jpg',
-            title: '米家四位四控插线板',
-            con: '四位分控，随用随开',
-            money: 89,
-            href: '/detail/1012'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/93cc1fa15e0e9af87e37cba047d8186e.jpg',
-            title: '米家四位四控插线板',
-            con: '四位分控，随用随开',
-            money: 89,
-            href: '/detail/1012'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/93cc1fa15e0e9af87e37cba047d8186e.jpg',
-            title: '米家四位四控插线板',
-            con: '四位分控，随用随开',
-            money: 89,
-            href: '/detail/1012'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/93cc1fa15e0e9af87e37cba047d8186e.jpg',
-            title: '米家四位四控插线板',
-            con: '四位分控，随用随开',
-            money: 89,
-            href: '/detail/1012'
-          }
-        ],
-        shoplist03: [
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
-            title: '小米电视4A 43英寸',
-            con: '全高清 HDR，64位处理器',
-            money: 1999,
-            href: '/detail/1004'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
-            title: '小米电视4A 43英寸',
-            con: '全高清 HDR，64位处理器',
-            money: 1999,
-            href: '/detail/1004'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
-            title: '小米电视4A 43英寸',
-            con: '全高清 HDR，64位处理器',
-            money: 1999,
-            href: '/detail/1004'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
-            title: '小米电视4A 43英寸',
-            con: '全高清 HDR，64位处理器',
-            money: 1999,
-            href: '/detail/1004'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
-            title: '小米电视4A 43英寸',
-            con: '全高清 HDR，64位处理器',
-            money: 1999,
-            href: '/detail/1004'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
-            title: '小米电视4A 43英寸',
-            con: '全高清 HDR，64位处理器',
-            money: 1999,
-            href: '/detail/1004'
-          }
-        ],
-        shoplist04: [
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
-            title: '13.3"笔记本i5 独显',
-            con: '指纹解锁，全金属机身',
-            money: 5199,
-            href: '/detail/1014'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
-            title: '13.3"笔记本i5 独显',
-            con: '指纹解锁，全金属机身',
-            money: 5199,
-            href: '/detail/1014'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
-            title: '13.3"笔记本i5 独显',
-            con: '指纹解锁，全金属机身',
-            money: 5199,
-            href: '/detail/1014'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
-            title: '13.3"笔记本i5 独显',
-            con: '指纹解锁，全金属机身',
-            money: 5199,
-            href: '/detail/1014'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
-            title: '13.3"笔记本i5 独显',
-            con: '指纹解锁，全金属机身',
-            money: 5199,
-            href: '/detail/1014'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
-            title: '13.3"笔记本i5 独显',
-            con: '指纹解锁，全金属机身',
-            money: 5199,
-            href: '/detail/1014'
-          }
-        ],
-        shoplist06: [
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
-            title: '8H护颈乳胶枕 Z2',
-            con: '多重新科技  升级好睡眠',
-            money: 239,
-            href: '/detail/1016'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
-            title: '8H护颈乳胶枕 Z2',
-            con: '多重新科技  升级好睡眠',
-            money: 239,
-            href: '/detail/1016'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
-            title: '8H护颈乳胶枕 Z2',
-            con: '多重新科技  升级好睡眠',
-            money: 239,
-            href: '/detail/1016'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
-            title: '8H护颈乳胶枕 Z2',
-            con: '多重新科技  升级好睡眠',
-            money: 239,
-            href: '/detail/1016'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
-            title: '8H护颈乳胶枕 Z2',
-            con: '多重新科技  升级好睡眠',
-            money: 239,
-            href: '/detail/1016'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
-            title: '8H护颈乳胶枕 Z2',
-            con: '多重新科技  升级好睡眠',
-            money: 239,
-            href: '/detail/1015'
-          }
-        ],
-        shoplist07: [
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317120865819.png',
-            title: '小米影视会员卡',
-            con: '畅享海量片库',
-            money: 498,
-            href: '/detail/1018'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317120865819.png',
-            title: '小米影视会员卡',
-            con: '畅享海量片库',
-            money: 498,
-            href: '/detail/1018'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317120865819.png',
-            title: '小米影视会员卡',
-            con: '畅享海量片库',
-            money: 498,
-            href: '/detail/1018'
-          },
-          {
-            src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317120865819.png',
-            title: '小米影视会员卡',
-            con: '畅享海量片库',
-            money: 498,
-            href: '/detail/1018'
-          }
-        ]
+    shoplist:[],
     } 
 },
 //1.2声明
 components: {
     HeaderComponent,FooterComponent,CarouselComponent
   },
+  created(){
+      this.$http({
+            url:`http://localhost:8081/indexList?indexListId=1`,
+            method:"get",
+        }).then((res)=>{
+          console.log(res.data);
+          this.shoplist=res.data;
+        })
+  },
   methods:{
     // 2.1.3定义函数，并进行处理
     thisTitle:function(msg){
       this.title=msg;
-       let _this=this;
-        // 发送http请求 方式一 vue-resouse
-        // this.$http({
-        //     url:`http://localhost:8081/carousel?pgid=${this.title+1}`,
-        //     method:"get",
-        // }).then((res)=>{
-        //     let imgs=[];
-        //     for(var item of res.data){
-        //         imgs.push(item.url);
-        //     }
-        //     console.log(imgs);
-        //     this.carImgs=imgs;
-        // })
+       this.$http({
+            url:`http://localhost:8081/indexList?indexListId=${msg+1}`,
+            method:"get",
+        }).then((res)=>{
+          console.log(res.data);
+          this.shoplist=res.data;
+        })
     }
   }
 }
