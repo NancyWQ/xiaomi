@@ -9,7 +9,7 @@ const pool=require('./pool.js');
 //创建服务器
 var app=express();
 var server=http.createServer(app);
-server.listen(8081);
+server.listen(5000);
 //跨域
 app.all('*',function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -58,3 +58,20 @@ app.get('/indexList',(reg,res)=>{
         }
     })
 });
+app.get('/indexDivided',(req,res)=>{
+    var sql="SELECT *  FROM  `divided_index`";
+    pool.getConnection((err,conn)=>{
+        if(err){
+            throw new Error;
+        }else {
+            conn.query(sql,(err, result)=> {
+                if (err) {
+                    throw new Error;
+                }else {
+                    res.json(result);
+                }
+                conn.release();
+            })
+        }
+    })
+})

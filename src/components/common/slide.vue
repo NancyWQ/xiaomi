@@ -25,7 +25,7 @@ export default {
     },
     created() {
         this.$http({
-            url:`http://localhost:8081/carousel?pgid=1`,
+            url:`http://localhost:5000/carousel?pgid=1`,
             method:"get",
         }).then((res)=>{
             let imgs=[];
@@ -39,7 +39,7 @@ export default {
     updated(){
         // 兄弟元素之间的参数传递也可以弄成父子之间的参数传递
               this.$http({
-            url:`http://localhost:8081/carousel?pgid=${this.showCar+1}`,
+            url:`http://localhost:5000/carousel?pgid=${this.showCar+1}`,
             method:"get",
         }).then((res)=>{
             let imgs=[];

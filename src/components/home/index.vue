@@ -188,7 +188,7 @@ components: {
   },
   created(){
       this.$http({
-            url:`http://localhost:8081/indexList?indexListId=1`,
+            url:`http://localhost:5000/indexList?indexListId=1`,
             method:"get",
         }).then((res)=>{
           console.log(res.data);
@@ -200,7 +200,7 @@ components: {
     thisTitle:function(msg){
       this.title=msg;
        this.$http({
-            url:`http://localhost:8081/indexList?indexListId=${msg+1}`,
+            url:`http://localhost:5000/indexList?indexListId=${msg+1}`,
             method:"get",
         }).then((res)=>{
           console.log(res.data);

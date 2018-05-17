@@ -6,7 +6,7 @@
     <div class="wrap-box">
        <div class="left-menu absolute scroll-box" ref="left">
         <ul>
-          <li class="item" v-for="(target, index) in dataItem" :class="{ 'active': index == active }">{{target.name}}</li>
+          <li class="item" v-for="(target, index) in dataItem" :class="{ 'active': index == active }" @click="changeNav(index)">{{target.name}}</li>
         </ul>
       </div>
        <div class="right-box absolute scroll-box" ref="rightView">
@@ -39,499 +39,119 @@ export default {
  },
  data(){
    return{
+     distance:[],
        active: 0,
         dataItem: [
           {
             name: '新品',
-            children: [
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },{
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              }
-            ]
+            children: []
           },
           {
             name: '手机',
-            children: [
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              }
-            ]
+            children: []
           },
           {
             name: '电视',
-            children: [
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              }
-            ]
+             children: []
           },
           {
             name: '电脑',
-            children: [
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              }
-            ]
+             children: []
           },
           {
             name: '家电',
-            children: [
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              }
-            ]
+             children: []
           },
           {
             name: '路由',
-            children: [
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              }
-            ]
+             children: []
           },
           {
             name: '智能',
-            children: [
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              }
-            ]
+            children: []
           },
           {
             name: '电源',
-            children: [
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              }
-            ]
+             children: []
           },
           {
             name: '耳机',
-            children: [
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              }
-            ]
+            children: []
           },
           {
             name: '音箱',
-            children: [
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              }
-            ]
+            children: []
           },
           {
             name: '礼品',
-            children: [
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              }
-            ]
+             children: []
           },
           {
             name: '生活',
-            children: [
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              }
-            ]
+            children: []
           },
           {
             name: '米粉卡',
-            children: [
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              }
-            ]
+            children: []
           },
           {
             name: '零售店',
-            children: [
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              },
-              {
-                name: '小米5s',
-                src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/img_0505.png',
-                link: '/detail/1019'
-              }
-            ]
+             children: []
           }
         ],
    }
+ },
+ methods:{
+   changeNav(num){
+     this.active=num;
+    //  不要用生命周期函数 可能会拿不到正确的值
+     let li=this.$refs.rightView.childNodes[0].childNodes;
+     for(let item of li){
+       let scroll=item.offsetTop;
+       this.distance.push(scroll);
+     }
+     this.$refs.rightView.scrollTop = this.distance[num];
+   },
+ },
+ created(){
+   let _this=this;
+   _this.$http({
+            url:`http://localhost:5000/indexDivided`,
+            method:"get",
+        }).then((res)=>{
+            for(let item of res.data){
+              switch(item.group){
+                case "新品":_this.dataItem[0].children.push(item);
+                break;
+                case "手机":_this.dataItem[1].children.push(item);
+                break;
+                case "电视":_this.dataItem[2].children.push(item);
+                break;
+                case "电脑":_this.dataItem[3].children.push(item);
+                break;
+                case "家电":_this.dataItem[4].children.push(item);
+                break;
+                case "路由":_this.dataItem[5].children.push(item);
+                break;
+                case "智能":_this.dataItem[6].children.push(item);
+                break;
+                case "电源":_this.dataItem[7].children.push(item);
+                break;
+                case "耳机":_this.dataItem[8].children.push(item);
+                break;
+                case "音响":_this.dataItem[9].children.push(item);
+                break;
+                case "礼品":_this.dataItem[10].children.push(item);
+                break;
+                case "生活":_this.dataItem[11].children.push(item);
+                break;
+                case "米粉卡":_this.dataItem[12].children.push(item);
+                break;
+                case "零售店":_this.dataItem[13].children.push(item);
+                break;
+              }
+            }
+        })
  }
 }
 </script>
