@@ -10,6 +10,7 @@ import HomeComponent from '@/components/home/index'
 import UserIndexComponent from '@/components/user/index'
 import divideComponent from '@/components/divide/index'
 import cartComponent from '@/components/cart/index'
+import detailComponent from '@/components/detail/index'
 Vue.use(Router)
 Vue.use(VueAwesomeSwiper)
 
@@ -49,6 +50,11 @@ export default new Router({
       path:"/cart",
       name:'cartComponent',
       component:cartComponent
-    }
+    },
+    {
+      path:"/detail",
+      name:'detailComponent',
+      component:detailComponent
+    },
   ]
 })

@@ -205,7 +205,7 @@ components: {
         }).then((res)=>{
           console.log(res.data);
           this.shoplist=res.data;
-        })
+        });
     }
   }
 }
