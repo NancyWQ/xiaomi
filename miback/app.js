@@ -81,8 +81,16 @@ app.get('/indexDivided',(req,res)=>{
 //详情
 app.get('/indexDetail',(req,res)=>{
     var detailId=req.query.detailId;
-    var detail={detailId:detailId,banner:[],};
+    var detail={detailId:detailId,
+                banner:[],
+                tips: [],
+                pBox:[],
+                detail:[]
+                };
     var sql="SELECT  `src` FROM  `detail_carousel` WHERE  `detail_id` = ?";
+    var sql1="SELECT  * FROM  `detail` WHERE  `detail_id` = ?";
+    var sql2="SELECT  `src` FROM  `detail_detail` WHERE  `detail_id` = ?";
+    var sql3="SELECT  `tip` FROM  `detail_tips` WHERE  `detail_id` = ?";
     pool.getConnection((err,conn)=>{
         if(err){
             throw new Error;
@@ -92,10 +100,53 @@ app.get('/indexDetail',(req,res)=>{
                     throw new Error;
                 }else {
                     detail.banner=result;
+                    //res.json(detail);
+                }
+                conn.release();
+            })
+        }
+    });
+    pool.getConnection((err,conn)=>{
+        if(err){
+            throw new Error;
+        }else {
+            conn.query(sql1,[detailId],(err, result)=> {
+                if (err) {
+                    throw new Error;
+                }else {
+                    detail.detail=result;
+                }
+                conn.release();
+            })
+        }
+    });
+    pool.getConnection((err,conn)=>{
+        if(err){
+            throw new Error;
+        }else {
+            conn.query(sql2,[detailId],(err, result)=> {
+                if (err) {
+                    throw new Error;
+                }else {
+                    detail.pBox=result;
+                }
+                conn.release();
+            })
+        }
+    });
+    pool.getConnection((err,conn)=>{
+        if(err){
+            throw new Error;
+        }else {
+            conn.query(sql3,[detailId],(err, result)=> {
+                if (err) {
+                    throw new Error;
+                }else {
+                    detail.tips=result;
                     res.json(detail);
                 }
                 conn.release();
             })
         }
-    })
+    });
 })
