@@ -15,7 +15,7 @@
 export default {
   name:"CarouselComponent",
 //   3.1.2在子组件用props接收
-    props:['showCar'],
+    props:['showCar',"detailCar"],
    data:function(){
        return {
         mark: 0,
@@ -38,6 +38,7 @@ export default {
     },
     updated(){
         // 兄弟元素之间的参数传递也可以弄成父子之间的参数传递
+        if(this.showCar!=undefined){
               this.$http({
             url:`http://localhost:5000/carousel?pgid=${this.showCar+1}`,
             method:"get",
@@ -48,6 +49,18 @@ export default {
             }
             this.img=imgs;
         })
+    }else{
+          this.$http({
+            url:`http://localhost:5000/indexDetail?detailId=${this.detailCar}`,
+            method:"get",
+        }).then((res)=>{
+            let imgs=[];
+            for(var item of res.data.banner){
+                imgs.push(item.src);
+            }
+            this.img=imgs;
+        })
+    }
     },
     methods: {
         change(i) {

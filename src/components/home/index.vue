@@ -40,7 +40,7 @@
         <div class="shop-box clear">
 
           <div class="shop-box-item" v-for="target in shoplist">
-            <img :src="target.src" alt="">
+            <img :src="target.src" alt="" @click="navigatorToDetail(target.detail_id)">
             <p class="title">{{ target.title }}</p>
             <p class="con">{{ target.con }}</p>
             <p class="money">
@@ -57,7 +57,7 @@
         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px;">
         <div class="shop-box clear">
           <div class="shop-box-item" v-for="target in shoplist">
-            <img :src="target.src" alt="">
+            <img :src="target.src" alt="" @click="navigatorToDetail(target.detail_id)">
             <p class="title">{{ target.title }}</p>
             <p class="con">{{ target.con }}</p>
             <p class="money">
@@ -74,7 +74,7 @@
         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px">
         <div class="shop-box clear">
           <div class="shop-box-item" v-for="target in shoplist">
-            <img :src="target.src" alt="">
+            <img :src="target.src" alt="" @click="navigatorToDetail(target.detail_id)">
             <p class="title">{{ target.title }}</p>
             <p class="con">{{ target.con }}</p>
             <p class="money">
@@ -91,7 +91,7 @@
         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px">
         <div class="shop-box clear">
           <div class="shop-box-item" v-for="target in shoplist">
-            <img :src="target.src" alt="">
+            <img :src="target.src" alt="" @click="navigatorToDetail(target.detail_id)">
             <p class="title">{{ target.title }}</p>
             <p class="con">{{ target.con }}</p>
             <p class="money">
@@ -133,7 +133,7 @@
         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px">
         <div class="shop-box clear">
           <div class="shop-box-item" v-for="target in shoplist">
-            <img :src="target.src" alt="">
+            <img :src="target.src" alt="" @click="navigatorToDetail(target.detail_id)">
             <p class="title">{{ target.title }}</p>
             <p class="con">{{ target.con }}</p>
             <p class="money">
@@ -148,8 +148,8 @@
          <div class="shop-item">
         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="" style="height:100px;">
         <div class="shop-box clear">
-          <div class="shop-box-item" v-for="target in shoplist">
-            <img :src="target.src" alt="">
+          <div class="shop-box-item" v-for="target in shoplist" >
+            <img :src="target.src" alt="" @click="navigatorToDetail(target.detail_id)">
             <p class="title">{{ target.title }}</p>
             <p class="con">{{ target.con }}</p>
             <p class="money">
@@ -206,6 +206,9 @@ components: {
           console.log(res.data);
           this.shoplist=res.data;
         });
+    },
+    navigatorToDetail(num){
+     this.$router.push(`/detail/${num}`)
     }
   }
 }

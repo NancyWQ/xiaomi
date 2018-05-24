@@ -52,7 +52,7 @@ export default new Router({
       component:cartComponent
     },
     {
-      path:"/detail",
+      path:"/detail/:detailId",
       name:'detailComponent',
       component:detailComponent
     },

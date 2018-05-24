@@ -17,7 +17,7 @@
               </p>
               <div class="shop-item-wrap clear">
                 <div class="shop-item" v-for="(shop,index) in target.children">
-                  <p><img :src="shop.src" alt="index"></p>
+                  <p><img :src="shop.src" alt="index" @click="navigatorToDetail(shop.detail_id)"></p>
                   <p class="name">{{shop.name}}</p>
                 </div>
               </div>
@@ -112,6 +112,9 @@ export default {
      }
      this.$refs.rightView.scrollTop = this.distance[num];
    },
+   navigatorToDetail(num){
+     this.$router.push(`/detail/${num}`)
+   }
  },
  created(){
    let _this=this;

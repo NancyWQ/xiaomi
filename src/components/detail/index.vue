@@ -2,9 +2,14 @@
     <div class="app-init detail-page">
         <div class="app-init scroll-box footer-hack">
             <div class="banner">
-                 <CarouselComponent></CarouselComponent>
+                 <CarouselComponent :detailCar="detailId"></CarouselComponent>
                 <span class="back iconfont icon-houtui" @click="$router.back()"></span>
             </div>
+            <!--<div class="content">
+               <div class="hot">
+                <img :src="info.hot">
+              </div>
+            </div>-->
         </div>
     </div>
 </template>
@@ -12,7 +17,26 @@
 import CarouselComponent from '../common/slide'
 export default {
   name:"detailComponent" ,
-  components:{CarouselComponent}
+  components:{CarouselComponent},
+  data(){
+    return{
+      detailId:1001,
+      info:{},
+    }
+  },
+  methods:{
+
+  },
+  mounted:function(){
+    this.detailId=this.$route.params.detailId;
+     this.$http({
+            url:`http://localhost:5000/indexDetail?detailId=${this.detailId}`,
+            method:"get",
+        }).then((res)=>{
+          console.log(res.data);
+           this.info=res.data.detail[0];
+        })
+  }
 }
 </script>
 <style type="text/sass" lang="sass">
