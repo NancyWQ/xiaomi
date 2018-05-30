@@ -5,12 +5,64 @@
                  <CarouselComponent :detailCar="detailId"></CarouselComponent>
                 <span class="back iconfont icon-houtui" @click="$router.back()"></span>
             </div>
-            <!--<div class="content">
+            <div class="content">
                <div class="hot">
-                <img :src="info.hot">
+                <img :src="info.hot"/>
               </div>
-            </div>-->
+              <div class="title-box">
+                <h3>{{ info.title }}</h3>
+                <p style="color:#ff4a00">{{ info.bigContent }}</p>
+                <p style="color: #757575"> {{ info.smallContent }} </p>
+
+                <div class="press">
+                  <span class="money" v-if="info.money">￥{{ info.money }}</span>
+                  <span class="no-money" v-if="info.noMoney">￥{{ info.noMoney }}</span>
+                  <span class="tips" v-for="target in info.tips">{{ target }}</span>
+                </div>
+              </div>
+              <div class="touch-item-box">
+                <div class="touch-item">
+                  <span class="key">已选</span>
+                  {{ info.chouse }}
+                </div>
+                <div class="touch-item">
+                  <span class="key">送至</span>
+                  <span v-for="target in info.address">{{ target }}</span>
+                </div>
+              </div>
+              <div class="touch-item-box">
+                <div class="touch-item">
+                  <span class="key">配件</span>
+                </div>
+              </div>
+               <div class="p-box">
+                  <img  v-for="target in info.pBox"  :src="target.src" alt=""/>
+              </div>
+            </div>
         </div>
+        <div class="detail-footer">
+              <div class="left-box fl">
+                <div class="item">
+                <p>
+                  <span class="iconfont icon-shouye"></span>
+                </p>
+                <p class="name">首页</p>
+              </div>
+              <div class="item cursom-shopcar">
+          <p>
+            <span class="iconfont icon-gouwuche"></span>
+          </p>
+          <p class="name">购物车</p>
+
+          <span class="num" v-show="getShopCarLength > 0" :class="{ 'full': parseInt(getShopCarLength) >= 99 }">{{ parseInt(getShopCarLength) >= 99 ? '99+' : getShopCarLength }}</span>
+        </div>
+              </div>
+              <div class="right-box shop-car fl">
+        加入购物车
+        <span class="bool bool-animate" ref="bool"></span>
+      </div>
+            </div>
+            
     </div>
 </template>
 <script>
@@ -22,6 +74,7 @@ export default {
     return{
       detailId:1001,
       info:{},
+      getShopCarLength:0
     }
   },
   methods:{
@@ -35,6 +88,8 @@ export default {
         }).then((res)=>{
           console.log(res.data);
            this.info=res.data.detail[0];
+           this.info.pBox=res.data.pBox;
+           this.info.tips=res.data.tips;
         })
   }
 }
@@ -52,7 +107,6 @@ export default {
         -webkit-transform: rotate(0deg)
       100%
         -webkit-transform: rotate(360deg)
-
     .banner
       position: relative
       .back
@@ -68,18 +122,28 @@ export default {
         background-color: rgba(34, 35, 43, .6)
         top: 0.32rem
         left: 0.32rem
+    .content
+      width: 100%
+      .hot
+        position: relative
+        img
+         width: 100%
+         height: 40px
+         position: absolute;
+         top: -40px
     .title-box
       background-color: #fff
       margin-bottom: 0.2rem
       padding: 0.2rem 0.4rem
       @include f12px
       h3
-        font-size: .5rem
+        font-size: .8rem
         line-height: 1.5em
         font-weight: normal
         color: #333
       p
         padding-top: 0.1rem
+        font-size: .35rem
       .press
         padding-top: 0.2rem
         .money

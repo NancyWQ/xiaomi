@@ -78,7 +78,7 @@ export default {
         play() {
         this.autoPlay();
         },
-        stop: function () {
+        stop(){
               clearInterval(this.timer);
               this.timer=null;
  
