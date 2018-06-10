@@ -42,7 +42,7 @@
         </div>
         <div class="detail-footer">
               <div class="left-box fl">
-                <div class="item">
+                <div class="item" @click="jump()">
                 <p>
                   <span class="iconfont icon-shouye"></span>
                 </p>
@@ -56,8 +56,11 @@
 
           <span class="num" v-show="getShopCarLength > 0" :class="{ 'full': parseInt(getShopCarLength) >= 99 }">{{ parseInt(getShopCarLength) >= 99 ? '99+' : getShopCarLength }}</span>
         </div>
-              </div>
-              <div class="right-box shop-car fl">
+      
+      
+      
+      </div>
+              <div class="right-box shop-car fl" @click="addCart()">
         加入购物车
         <span class="bool bool-animate" ref="bool"></span>
       </div>
@@ -74,11 +77,19 @@ export default {
     return{
       detailId:1001,
       info:{},
-      getShopCarLength:0
+      getShopCarLength:0,
+      detailIdArr:[],
     }
   },
   methods:{
-
+    jump(){
+      window.location.href="/";
+    },
+    addCart(){
+      this.detailIdArr.push(this.detailId);
+      this.getShopCarLength++;
+      console.log(this.detailIdArr);
+    }
   },
   mounted:function(){
     this.detailId=this.$route.params.detailId;
